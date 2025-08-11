@@ -79,7 +79,7 @@ class AzureOpenAIO1Config(OpenAIOSeriesConfig):
         return True
 
     def is_o_series_model(self, model: str) -> bool:
-        return "o1" in model or "o3" in model or "o_series/" in model
+        return "o1" in model or "o3" in model or "o_series/" in model or "gpt-5" in model or "gpt_5" in model
 
     def transform_request(
         self,
