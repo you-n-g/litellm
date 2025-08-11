@@ -130,11 +130,12 @@ class OpenAIOSeriesConfig(OpenAIGPTConfig):
         )
 
     def is_model_o_series_model(self, model: str) -> bool:
-        if model in litellm.open_ai_chat_completion_models and (
-            "o1" in model or "o3" in model
-        ):
-            return True
-        return False
+        return "o1" in model or "o3" in model or "o_series/" in model or "gpt-5" in model or "gpt_5" in model
+        # if model in litellm.open_ai_chat_completion_models and (
+        #     "o1" in model or "o3" in model
+        # ):
+        #     return True
+        # return False
 
     def _transform_messages(
         self, messages: List[AllMessageValues], model: str
